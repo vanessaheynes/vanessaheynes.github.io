@@ -1,0 +1,276 @@
+/* Reset and global styles */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow: auto;
+    background-color: #fff7f1;
+
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #524a4e;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-right: 2px solid #524a4e;
+    
+}
+
+.sidetitle {
+    font-size: 60px;
+    font-weight: 550;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+    color: #e78895;
+    margin-left: -10px;
+}
+
+.info {
+    margin-bottom: 15px;
+    color: #ffe4c9;
+    margin-left: -5px;
+    margin-top: -10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.info a {
+    display: block;
+    margin: 5px 0;
+    color: #ffe4c9;
+    text-decoration: none;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color:#524a4e;
+    color: #e78895;
+    border: 3px solid #ffe4c9;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #ffe4c9;
+    color:#524a4e;
+}
+
+.main {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.grid-container, .grid2-container, .grid3-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(280px, auto);
+    gap: 15px;
+    padding: 15px;
+    overflow: scroll; 
+    box-sizing: border-box;
+    width: 100%;
+    justify-content: center;
+    margin: 0 auto;
+    margin-left: 80px;
+}
+
+.grid2-container, .grid3-container {
+    grid-template-columns: repeat(2, 1fr); 
+}
+
+
+.grid-item img {
+    border-radius: 5px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.087); */
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: auto; /* Maintain the original aspect ratio */
+    height: auto; /* Maintain proportional height */
+    object-fit: contain; /* Ensures the image fits without distortion */
+    max-width: 100%;
+    background: none;
+    padding: 0;
+    margin: 0;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+
+}
+
+.grid-item a {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+.grid-item a:hover img {
+    transform: scale(1.05);
+    /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); */
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.grid-container .grid-item img:hover {
+    transform: scale(1.05);
+    
+  }
+  
+.grid-container > .grid-item:nth-child(3n+2) {
+    transform: translateY(20px);
+  }
+
+.grid2-container > .grid-item:nth-child(2n) {
+    transform: translateY(60px);
+  }
+
+/* .grid3-container > .grid-item:nth-child(2n+1) {
+    transform: translateY(80px);
+  } */
+
+.text-only {
+    height: auto;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    min-height: 280px;
+}
+
+.text-only p {
+    font-size: 14px;
+    color: red;
+}
+
+/* CONTENT PAGES  */
+
+.container {
+    display: grid;
+    grid-template-areas:
+      "about-head about-head about-head"
+      "carleton about-me-content blank"
+      "exp exp exp"
+      "exp-content exp-content exp-content";
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1%;
+    background-color: #fff7f1;
+    padding: 1%;
+    overflow: auto;
+}
+
+.container > div {
+    /* background-color: rgba(93, 156, 229, 0.8); */
+    padding: 5px;
+}
+
+.container > div.about-head {
+    grid-area: about-head;
+    text-align: left;
+}
+
+.container > div.carleton {
+    grid-area: carleton;
+}
+
+.container > div.about-me-content {
+    grid-area: about-me-content;
+  }
+
+.container > div.exp {
+    grid-area: exp;
+}
+
+.container > div.exp-content {
+    grid-area: exp-content;
+}
+
+.container > div.blank {
+    grid-area: blank;
+    padding: 50px;
+}
+
+.page-section-text {
+    font-size: clamp(1rem, 3vw, 3rem);
+    font-weight: 550;
+    font-family: 'Playfair Display', serif;
+    color: #e78895;
+    position: relative;
+}
+
+.about-me {
+    /* margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px; */
+    text-align: left;
+}
+
+.my-experiences {
+    text-align: left;
+}
+
+.photo {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    display: block; 
+}
+
+.carleton-logo {
+    text-align: center;
+    padding: 5px;
+}
+
+.text {
+    position: relative; 
+    font-family: 'Roboto', sans-serif;
+    color: #524a4e
+}
+
+.about-text {
+    text-align: left;
+    width: 450px;
+    margin-left: 50px;
+    font-size: clamp(1rem, 1.7vw, 3rem);
+    padding-left: 10px;
+}
+
+
+.exp-text {
+    width: 980px;
+    /* margin-top: -120px;
+    margin-left: 10px; */
+    font-size: clamp(1rem, 1.3vw, 3rem);
+    text-align: left;
+}
+
+.unfinished-text {
+    width: 950px;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 230px;
+}
+
+/* .small-text {
+    width: 700px;
+    font-size: 15px;
+    margin-top: 260px;
+    margin-left: 7px;
+} */
+
+.responsive {
+    max-width: 100%;
+    height: auto;
+  }
