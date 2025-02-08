@@ -247,6 +247,14 @@ body {
     padding-left: 10px;
 }
 
+.hci-text {
+    text-align: left;
+    width: 450px;
+    margin-left: 50px;
+    font-size: clamp(1rem, 1.7vw, 3rem);
+    padding-left: 10px;
+}
+
 
 .exp-text {
     width: 980px;
