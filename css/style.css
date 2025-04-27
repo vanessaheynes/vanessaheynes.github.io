@@ -1,284 +1,257 @@
-/* Reset and global styles */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon/icomoon.eot?srf3rx");
+  src: url("../fonts/icomoon/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?srf3rx") format("truetype"), url("../fonts/icomoon/icomoon.woff?srf3rx") format("woff"), url("../fonts/icomoon/icomoon.svg?srf3rx#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
-
+/* =======================================================
+*
+* 	Template Style 
+*	Edit this section
+*
+* ======================================================= */
 body {
-    display: flex;
-    height: 100vh;
-    font-family: Arial, sans-serif;
-    overflow: auto;
-    background-color: #fff7f1;
-
+  font-family: "Roboto", Arial, serif;
+  line-height: 1.8;
+  font-size: 16px;
+  background: #fff;
+  color: #848484;
+  font-weight: 300;
+  overflow-x: hidden;
+}
+body.fh5co-offcanvas {
+  overflow: hidden;
 }
 
-.sidebar {
-    width: 250px;
-    background-color: #524a4e;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    border-right: 2px solid #524a4e;
-    
+a {
+  color: #2da9d7;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+a:hover {
+  text-decoration: none !important;
+  color: #2da9d7 !important;
+}
+a:active, a:focus {
+  outline: none;
 }
 
-.sidetitle {
-    font-size: 60px;
-    font-weight: 550;
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 20px;
-    color: #e78895;
-    margin-left: -10px;
+p, ul, ol {
+  margin-bottom: 1.5em;
+  font-size: 15px;
+  color: #848484;
+  font-family: "Roboto", Arial, serif;
 }
 
-.info {
-    margin-bottom: 15px;
-    color: #ffe4c9;
-    margin-left: -5px;
-    margin-top: -10px;
-    font-family: 'Roboto', sans-serif;
+h1, h2, h3, h4, h5, h6 {
+  color: #212121;
+  font-family: "Roboto", Arial, serif;
+  font-weight: 400;
+  margin: 0 0 20px 0;
 }
 
-.info a {
-    display: block;
-    margin: 5px 0;
-    color: #ffe4c9;
-    text-decoration: none;
+figure {
+  margin-bottom: 2em;
 }
 
-.button {
-    padding: 10px 20px;
-    background-color:#524a4e;
-    color: #e78895;
-    border: 3px solid #ffe4c9;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align: center;
+::-webkit-selection {
+  color: #fcfcfc;
+  background: #2da9d7;
 }
 
-.button:hover {
-    background-color: #ffe4c9;
-    color:#524a4e;
+::-moz-selection {
+  color: #fcfcfc;
+  background: #2da9d7;
 }
 
-.main {
-    flex-grow: 1;
-    padding: 20px;
-    overflow-y: auto;
+::selection {
+  color: #fcfcfc;
+  background: #2da9d7;
 }
 
-.grid-container, .grid2-container, .grid3-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(280px, auto);
-    gap: 15px;
-    padding: 15px;
-    overflow: scroll; 
-    box-sizing: border-box;
-    width: 100%;
-    justify-content: center;
-    margin: 0 auto;
-    margin-left: 80px;
+#fh5co-header {
+  padding-top: 40px;
+  margin-bottom: 30px;
 }
-
-.grid2-container, .grid3-container {
-    grid-template-columns: repeat(2, 1fr); 
+#fh5co-header #fh5co-logo img {
+  max-width: 100%;
 }
-
-
-.grid-item img {
-    border-radius: 5px;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.087); */
-    display: block;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: auto; /* Maintain the original aspect ratio */
-    height: auto; /* Maintain proportional height */
-    object-fit: contain; /* Ensures the image fits without distortion */
-    max-width: 100%;
-    background: none;
-    padding: 0;
-    margin: 0;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-
+#fh5co-header nav {
+  padding-top: 20px;
 }
-
-.grid-item a {
-    display: inline-block;
-    width: auto;
-    height: auto;
-    text-decoration: none;
-    background: transparent;
-    padding: 0;
-    margin: 0;
+#fh5co-header nav ul {
+  padding: 0;
+  margin: 0;
 }
-
-.grid-item a:hover img {
-    transform: scale(1.05);
-    /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); */
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+#fh5co-header nav ul li {
+  padding: 0;
+  margin: 0;
+  display: -moz-inline-stack;
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  list-style: none;
+  font-size: 15px;
 }
-
-.grid-container .grid-item img:hover {
-    transform: scale(1.05);
-    
-  }
-  
-.grid-container > .grid-item:nth-child(3n+2) {
-    transform: translateY(20px);
-  }
-
-.grid2-container > .grid-item:nth-child(2n) {
-    transform: translateY(60px);
-  }
-
-/* .grid3-container > .grid-item:nth-child(2n+1) {
-    transform: translateY(80px);
-  } */
-
-.text-only {
-    height: auto;
-    display: flex;
-    align-items: center;
-    text-align: justify;
-    min-height: 280px;
+#fh5co-header nav ul li a {
+  color: #999999 !important;
+  padding: 10px;
 }
-
-.text-only p {
-    font-size: 14px;
-    color: red;
-}
-
-/* CONTENT PAGES  */
-
-.container {
-    display: grid;
-    grid-template-areas:
-      "about-head about-head about-head"
-      "carleton about-me-content blank"
-      "exp exp exp"
-      "exp-content exp-content exp-content";
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1%;
-    background-color: #fff7f1;
-    padding: 1%;
-    overflow: auto;
-}
-
-.container > div {
-    /* background-color: rgba(93, 156, 229, 0.8); */
+@media screen and (max-width: 480px) {
+  #fh5co-header nav ul li a {
     padding: 5px;
-}
-
-.container > div.about-head {
-    grid-area: about-head;
-    text-align: left;
-}
-
-.container > div.carleton {
-    grid-area: carleton;
-}
-
-.container > div.about-me-content {
-    grid-area: about-me-content;
   }
-
-.container > div.exp {
-    grid-area: exp;
+}
+#fh5co-header nav ul li a:hover, #fh5co-header nav ul li a:active, #fh5co-header nav ul li a:focus {
+  color: #000 !important;
+  text-decoration: none;
+  outline: none;
+}
+#fh5co-header nav ul li.active a {
+  text-decoration: line-through !important;
+  color: black !important;
 }
 
-.container > div.exp-content {
-    grid-area: exp-content;
+.fh5co-projects-feed, .footer-content {
+  margin: 0 auto;
+  max-width: 1400px;
 }
 
-.container > div.blank {
-    grid-area: blank;
-    padding: 50px;
+.fh5co-projects-feed .fh5co-project {
+  float: left;
+  margin: 20px 20px 20px;
+  width: 290px;
+}
+@media screen and (max-width: 480px) {
+  .fh5co-projects-feed .fh5co-project {
+    margin: 10px 10px 10px;
+  }
+}
+.fh5co-projects-feed .fh5co-project > a {
+  display: block;
+  text-align: center;
+}
+.fh5co-projects-feed .fh5co-project > a img {
+  margin-bottom: 30px;
+}
+.fh5co-projects-feed .fh5co-project > a h2 {
+  font-size: 14px;
+  color: #999999;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+.fh5co-projects-feed .fh5co-project > a:hover h2, .fh5co-projects-feed .fh5co-project > a:active h2, .fh5co-projects-feed .fh5co-project > a:focus h2 {
+  color: #000;
 }
 
-.page-section-text {
-    font-size: clamp(1rem, 3vw, 3rem);
-    font-weight: 550;
-    font-family: 'Playfair Display', serif;
-    color: #e78895;
-    position: relative;
+.masonry,
+.masonry .masonry-brick {
+  -webkit-transition-duration: 0.7s;
+  transition-duration: 0.7s;
 }
 
-.about-me {
-    /* margin-left: 20px;
-    margin-top: 10px;
-    margin-bottom: 20px; */
-    text-align: left;
+.masonry {
+  -webkit-transition-property: height, width;
+  transition-property: height, width;
 }
 
-.my-experiences {
-    text-align: left;
+.masonry .masonry-brick {
+  -webkit-transition-property: left, right, top;
+  transition-property: left, right, top;
 }
 
-.photo {
-    position: relative;
-    max-width: 100%;
-    height: auto;
-    display: block; 
+.page-content {
+  margin: 0 auto;
+  max-width: 620px;
+  width: 100%;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.page-content img {
+  max-width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .page-content {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+.page-content .mb0 {
+  margin-bottom: 0;
+}
+.page-content .meta {
+  margin-bottom: 20px;
+}
+.page-content .meta span {
+  color: #bfbfbf;
+}
+.page-content .meta a {
+  color: #bfbfbf;
+}
+.page-content .meta a:hover, .page-content .meta a:active, .page-content .meta a:focus {
+  color: #000 !important;
+}
+@media screen and (max-width: 480px) {
+  .page-content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
 }
 
-.carleton-logo {
-    text-align: center;
+#fh5co-footer {
+  float: left;
+  width: 100%;
+  background: #ebebeb;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  color: #999999;
+}
+#fh5co-footer a {
+  color: #bfbfbf;
+}
+#fh5co-footer a:hover, #fh5co-footer a:active, #fh5co-footer a:focus {
+  color: #000 !important;
+}
+#fh5co-footer .social {
+  margin-top: 20px;
+}
+#fh5co-footer .social a {
+  padding: 10px;
+  color: #999999 !important;
+}
+@media screen and (max-width: 480px) {
+  #fh5co-footer .social a {
     padding: 5px;
-}
-
-.text {
-    position: relative; 
-    font-family: 'Roboto', sans-serif;
-    color: #524a4e
-}
-
-.about-text {
-    text-align: left;
-    width: 450px;
-    margin-left: 50px;
-    font-size: clamp(1rem, 1.7vw, 3rem);
-    padding-left: 10px;
-}
-
-.hci-text {
-    text-align: left;
-    width: 450px;
-    margin-left: 50px;
-    font-size: clamp(1rem, 1.7vw, 3rem);
-    padding-left: 10px;
-}
-
-
-.exp-text {
-    width: 980px;
-    /* margin-top: -120px;
-    margin-left: 10px; */
-    font-size: clamp(1rem, 1.3vw, 3rem);
-    text-align: left;
-}
-
-.unfinished-text {
-    width: 950px;
-    font-size: 20px;
-    text-align: center;
-    margin-top: 230px;
-}
-
-/* .small-text {
-    width: 700px;
-    font-size: 15px;
-    margin-top: 260px;
-    margin-left: 7px;
-} */
-
-.responsive {
-    max-width: 100%;
-    height: auto;
   }
+}
+#fh5co-footer .social a:hover, #fh5co-footer .social a:active, #fh5co-footer .social a:focus {
+  color: #000 !important;
+}
+
+.square {
+  list-style: square;
+}
+
+.pt70 {
+  padding-top: 70px;
+}
+@media screen and (max-width: 480px) {
+  .pt70 {
+    padding-top: 30px;
+  }
+}
+
+.pb70 {
+  padding-bottom: 70px;
+}
+@media screen and (max-width: 480px) {
+  .pb70 {
+    padding-bottom: 30px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
