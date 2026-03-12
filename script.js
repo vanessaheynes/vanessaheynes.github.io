@@ -56,16 +56,13 @@ function buildSubParagraph(price, bullets) {
 
   return `<center>Starting MSRP* <strong>${price}</strong> |
 MPG** <strong>23/31</strong> <i>city/hwy</i></center>
-
 <br>
-
 <ul align="left">
 <li>${bullets[0]}</li>
 <li>${bullets[1]}</li>
 <li>${bullets[2]}</li>
 <li>${bullets[3]}</li>
 </ul>
-
 <br>
 
 <center>
