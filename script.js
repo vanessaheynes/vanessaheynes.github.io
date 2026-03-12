@@ -29,26 +29,21 @@ function buildSlide(slideNumber, price, bullets, image_url, color, trim_name) {
 <div class="custom-slide">
     <img src="${image_url}" alt="${color} [VehicleMakeModel] ${trim_name} trim"
      style="max-width:300px; margin:auto; display:block;">
-
     <h3>[VehicleMakeModel] ${trim_name}</h3>
-
     <p><strong>Starting Price</strong> at $${price}* | MPG <strong>34/27</strong> <i>hwy/city</i></p>
-
     <ul>
         <li>${bullets[0]}</li>
         <li>${bullets[1]}</li>
         <li>${bullets[2]}</li>
         <li>${bullets[3]}</li>
     </ul>
-
-<center>
-<a href="[InventoryUrl]" target="new"
-title="View [VehicleMake] Inventory at [DealerName]"
-class="dtl-testdrive-cta ncs-button main-cta test-button">
-View Inventory
-</a>
-</center>
-
+    <center>
+    <a href="[InventoryUrl]" target="new"
+    title="View [VehicleMake] Inventory at [DealerName]"
+    class="dtl-testdrive-cta ncs-button main-cta test-button">
+    View Inventory
+    </a>
+    </center>
 </div>`;
 }
 
