@@ -76,6 +76,15 @@ function buildCarousel(slides) {
     html += s + "\n\n";
   });
 
+  html += `</div>
+
+  <!-- Navigation Arrows -->
+  <div class="custom-slider-nav">
+    <button class="custom-slider-arrow custom-left-arrow">&#10094;</button>
+    <button class="custom-slider-arrow custom-right-arrow">&#10095;</button>
+  </div>
+`
+
   html += `<!-- Dot Indicators -->
 <div class="custom-dots">
 <span class="custom-dot active"></span>\n`;
