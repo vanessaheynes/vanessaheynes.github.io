@@ -50,12 +50,12 @@ function buildSubParagraph(price, bullets) {
 
 return `<center>Starting MSRP* <strong>${price}</strong> | MPG** <strong>23/31</strong> <i>city/hwy</i></center>
 <br>
-<ul align="left">
+<div align="left">
     <li>${bullets[0]}</li>
     <li>${bullets[1]}</li>
     <li>${bullets[2]}</li>
     <li>${bullets[3]}</li>
-</ul>
+</div>
 <br>
 <center>
     <a href="[InventoryUrl]" target="new"
@@ -69,7 +69,7 @@ return `<center>Starting MSRP* <strong>${price}</strong> | MPG** <strong>23/31</
 function buildCarousel(slides) {
 
   let html = `<!-- Carousel HTML Starts -->
-<div class="custom-slider-container">'
+<div class="custom-slider-container">
 <div class="custom-slider-wrapper">\n`;
 
   slides.forEach(s => {
