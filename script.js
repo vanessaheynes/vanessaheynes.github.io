@@ -94,7 +94,6 @@ function buildCarousel(slides) {
   }
 
   html += `</div>
-</div>
 </div>`;
 
   return html;
