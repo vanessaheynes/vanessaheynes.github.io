@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page List Structures</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    input, textarea { width: 100%; margin-bottom: 10px; padding: 8px; }
+    button { padding: 10px 20px; cursor: pointer; }
+    pre { background: #f4f4f4; padding: 15px; white-space: pre-wrap; }
+
+    #tablePreview {
+  margin-top: 10px;
+  overflow-x: auto;
+  border: 1px solid #ddd;
+}
+
+.sheet-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 12px;
+}
+
+.sheet-table td, .sheet-table th {
+  border: 1px solid #ddd;
+  padding: 6px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.sheet-header {
+  background: #f3f3f3;
+  font-weight: bold;
+}
+
+.sheet-section {
+  background: #e8f0fe;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+  </style>
+  <script src="pageListScript.js"></script>
+</head>
+<body>
+
+<h2>Page List Structures</h2>
+
+<label>Select a variation:</label>
+<select id="variation">
+  <option value="v1">Variation 1 (Lease Prices & Finance Offers)</option>
+  <option value="v2">Variation 2 (Lease & Finance Prices)</option>
+  <option value="v3">Variation 3 (Prices & Finance Offers )</option>
+  <option value="v4">Variation 4 (Special Offers & Prices)</option>
+</select>
+<br>
+<br>
+
+<label>Make:</label>
+<input id="make" value="">
+
+<label>Models (comma separated):</label>
+<input id="models" value="">
+
+<label>City:</label>
+<input id="city" value="">
+
+<label>State:</label>
+<input id="state" value="">
+
+<label>Body Styles (comma separated):</label>
+<input id="bodystyles" value="">
+
+<button onclick="generate()">Generate</button>
+
+<h3>Spreadsheet Preview</h3>
+<div id="tablePreview"></div>
+
+<button onclick="copyToClipboard(csvContent)">
+  Copy to Google Sheets
+</button>
+
+<!-- <h3>Output:</h3>
+<pre id="output"></pre> -->
+
+
+</body>
+</html>
