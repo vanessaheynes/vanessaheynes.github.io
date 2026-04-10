@@ -225,12 +225,6 @@ function generate() {
   addBlankRow();
   rows.push(["Used Leaderboard", "", "", "", "", "", ""]);
 
-  // Main USED (car)
-  const usedMainURL = v.usedURL("car", cityURL, state).toLowerCase();
-  const usedMainHeader = v.usedHeader("Car", city, state);
-  const usedMainMeta = v.usedMeta("Car", city, state);
-
-  addRow("Used Offers", usedMainURL, usedMainHeader, usedMainMeta);
 
   // Bodystyles (excluding car for nav)
   bodystyles.forEach(body => {
