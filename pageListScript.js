@@ -141,6 +141,25 @@ function renderTable(rows) {
   container.innerHTML = html;
 }
 
+let csvContent = "";
+
+async function copyToClipboard(text) {
+  try {
+    await navigator.clipboard.write([
+      new ClipboardItem({
+        "text/plain": new Blob([text], { type: "text/plain" })
+      })
+    ]);
+  } catch (err) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+  }
+}
+
 // =========================
 // MAIN GENERATOR
 // =========================
@@ -273,7 +292,7 @@ function generate() {
   // =========================
   // CONVERT TO CSV
   // =========================
-const csvContent = rows
+   csvContent = rows
   .map(row => row.join("\t"))
   .join("\n");
 
@@ -283,23 +302,7 @@ const csvContent = rows
 
   
 
-  async function copyToClipboard(text) {
-  try {
-    await navigator.clipboard.write([
-      new ClipboardItem({
-        "text/plain": new Blob([text], { type: "text/plain" })
-      })
-    ]);
-  } catch (err) {
-    // fallback
-    const textarea = document.createElement("textarea");
-    textarea.value = text;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textarea);
-  }
-}
+
 
 copyToClipboard(csvContent);
 }
