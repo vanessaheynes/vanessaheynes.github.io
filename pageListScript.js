@@ -6,6 +6,12 @@ const variations = {
     newMainURL: (make, cityURL, state) =>
   `/${make}-lease-prices-finance-offers-${cityURL}-${state}-dtw`,
 
+    newMainHeader: (make, city, state) =>
+    `${make} Lease Prices & Finance Offers in ${city}, ${state}`,
+
+    newMainMeta: (make, city, state) =>
+      `${make} Lease Prices & Finance Offers - ${city} ${state}`,
+    
     usedURL: (body, cityURL, state) =>
       `/used-${body}-specials-prices-${cityURL}-${state}-dtw`,
 
@@ -28,6 +34,12 @@ const variations = {
   v2: {
     newMainURL: (make, cityURL, state) =>
   `/${make}-lease-finance-prices-${cityURL}-${state}-dtw`,
+
+    newMainHeader: (make, city, state) =>
+    `${make} Lease & Finance Prices in ${city}, ${state}`,
+
+    newMainMeta: (make, city, state) =>
+      `${make} Lease & Finance Prices - ${city} ${state}`,
 
     usedURL: (body, cityURL, state) =>
       `/used-${body}-specials-prices-${cityURL}-${state}-dtw`,
@@ -52,6 +64,12 @@ const variations = {
     newMainURL: (make, cityURL, state) =>
   `/${make}-prices-finance-offers-${cityURL}-${state}-dtw`,
 
+    newMainHeader: (make, city, state) =>
+    `${make} Prices & Finance Offers in ${city}, ${state}`,
+
+    newMainMeta: (make, city, state) =>
+      `${make} Prices & Finance Offers - ${city} ${state}`,
+
     usedURL: (body, cityURL, state) =>
       `/used-${body}-specials-prices-${cityURL}-${state}-dtw`,
 
@@ -74,6 +92,12 @@ const variations = {
   v4: {
     newMainURL: (make, cityURL, state) =>
   `/${make}-specials-prices-offers-${cityURL}-${state}-dtw`,
+
+    newMainHeader: (make, city, state) =>
+    `${make} Special Offers & Prices in ${city}, ${state}`,
+
+    newMainMeta: (make, city, state) =>
+      `${make} Special Offers & Prices - ${city} ${state}`,
 
     usedURL: (body, cityURL, state) =>
       `/used-${body}-specials-prices-${cityURL}-${state}-dtw`,
@@ -223,8 +247,8 @@ function generate() {
 
   // Main NEW
   const newMainURL = v.newMainURL(make, cityURL, state).toLowerCase();
-  const newMainHeader = `${make} Lease Offers in ${city}, ${state}`;
-  const newMainMeta = `${make} Lease Offers - ${city} ${state}`;
+  const newMainHeader = v.newMainHeader(make, cityURL, state);
+  const newMainMeta = v.newMainMeta(make, cityURL, state);
 
   addRow(`New ${make} Offers`, newMainURL, newMainHeader, newMainMeta);
 
