@@ -126,11 +126,11 @@ function generate() {
 
   let output = buildCarousel(slides);
 
-  output += "\n\n<!-- INDIVIDUAL SUB PARAGRAPHS PER TRIM -->\n\n";
+  // output += "\n\n<!-- INDIVIDUAL SUB PARAGRAPHS PER TRIM -->\n\n";
 
-  paragraphs.forEach(p => {
-    output += p + "\n\n";
-  });
+  // paragraphs.forEach(p => {
+  //   output += p + "\n\n";
+  // });
 
   document.getElementById("output").textContent = output;
 }
