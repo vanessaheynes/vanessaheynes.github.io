@@ -330,4 +330,3 @@ function generate() {
 
 copyToClipboard(csvContent);
 }
-
